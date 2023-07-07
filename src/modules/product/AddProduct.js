@@ -36,6 +36,7 @@ const AddProduct = () => {
         .then((response) => {
           if (response.data.success === true) {
             alert(response.data.message);
+            document.location.href = "/";
           } else {
             alert(response.data.message);
           }
@@ -137,7 +138,7 @@ const AddProduct = () => {
             required
           />
         </div>
-        <button type="submit">Agregar</button>
+        <button class="btn btn-outline-success" type="submit">Agregar</button>
       </form>
     </div>
   );

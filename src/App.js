@@ -51,7 +51,8 @@ function App() {
           <div className="row">
             <Routes>
               <Route path="/" exact element={<List />} />
-              <Route path="/view/:id" element={<Form />} />
+              <Route path="/form" element={<Form />} />
+              <Route path="/view/:id" element={<Edit />} />
               <Route path="/edit/:id" element={<Edit />} />
               <Route path="/sales" element={<Sales />} />
             </Routes>

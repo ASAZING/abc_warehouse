@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {  useParams } from "react-router-dom";
+import {  useParams, Redirect  } from "react-router-dom";
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -47,6 +47,7 @@ const EditProduct = () => {
     try {
       const response = await axios.put(`http://localhost:3000/products/`, updatedProduct);
       alert(response.data.message);
+      document.location.href = "/";
     } catch (error) {
       alert(error);
     }
@@ -80,7 +81,7 @@ const EditProduct = () => {
           <label>Categoría:</label>
           <input type="text" class = "form-control" value={category} onChange={(event) => setCategory(event.target.value)} required />
         </div>
-        <button type="submit">Actualizar</button>
+        <button class="btn btn-outline-warning" type="submit">Actualizar</button>
       </form>
     </div>
   );
